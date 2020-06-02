@@ -40,4 +40,29 @@ public class Tools
         });
         return primaryStage;
     }
+    public static Stage createSearchPage(Stage primaryStage) throws java.io.IOException {
+
+        Parent root = FXMLLoader.load(Tools.class.getClassLoader().getResource("fxml/SearchPage.fxml"));
+        primaryStage.setTitle("Video Platform");
+        primaryStage.setScene(new Scene(root, 1200, 700));
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.show();
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        primaryStage.setX((primScreenBounds.getWidth() - primaryStage.getWidth()) / 2);
+        primaryStage.setY((primScreenBounds.getHeight() - primaryStage.getHeight()) / 2);
+
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                xOffset = primaryStage.getX() - event.getScreenX();
+                yOffset = primaryStage.getY() - event.getScreenY();
+            }
+        });
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                primaryStage.setX(event.getScreenX() + xOffset);
+                primaryStage.setY(event.getScreenY() + yOffset);
+            }
+        });
+        return primaryStage;
+    }
 }
