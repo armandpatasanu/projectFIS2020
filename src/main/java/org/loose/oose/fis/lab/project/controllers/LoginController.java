@@ -86,6 +86,8 @@ public class LoginController implements Initializable {
             else
                 loginErrorText.setText("The password is incorrect!");
         }
+        else
+            loginErrorText.setText("Enter a valid account!");
 
     }
 

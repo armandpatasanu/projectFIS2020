@@ -3,9 +3,12 @@ package org.loose.oose.fis.lab.project.services;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
+
+import org.loose.oose.fis.lab.project.exceptions.CouldNotWriteUsersException;
 import org.loose.oose.fis.lab.project.exceptions.EmailAlreadyUsedException;
 import org.loose.oose.fis.lab.project.exceptions.UsernameAlreadyExistsException;
 import org.loose.oose.fis.lab.project.model.User;
+import org.loose.oose.fis.lab.project.services.FileSystemService;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -39,34 +42,12 @@ public class UserService {
         users = objectMapper.readValue(USERS_PATH.toFile(), new TypeReference<List<User>>() {
         });
     }
-
-    public static boolean checkLoginUsername(String username) {
+    public static boolean checkLoginUsername(String username)  {
         for (User user : users) {
             if (Objects.equals(username, user.getUsername()))
                 return true;
         }
         return false;
-    }
-
-    public static boolean checkLoginPassword(String password, String username) {
-        String newpassword = encodePassword(username, password);
-
-        for (User user : users) {
-            if (newpassword.equalsIgnoreCase(user.getPassword()))
-                return true;
-        }
-        return false;
-    }
-
-    private static String encodePassword(String salt, String password) {
-        MessageDigest md = getMessageDigest();
-        md.update(salt.getBytes(StandardCharsets.UTF_8));
-
-        byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
-
-        // This is the way a password should be encoded when checking the credentials
-        return new String(hashedPassword, StandardCharsets.UTF_8)
-                .replace("\"", ""); //to be able to save in JSON format
     }
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
         for (User user : users) {
@@ -80,6 +61,46 @@ public class UserService {
                 throw new EmailAlreadyUsedException(email);
         }
     }
+
+    public static void addUser(String fname, String lname,String username, String email,String password) throws UsernameAlreadyExistsException,EmailAlreadyUsedException
+    {
+        checkEmailDoesNotAlreadyExist(email);
+        checkUserDoesNotAlreadyExist(username);
+        users.add(new User(fname,lname,username,email,encodePassword(username, password)));
+        persistUsers();
+    }
+
+    public static boolean checkLoginPassword(String password,String username)
+    {
+        String newpassword = encodePassword(username, password);
+
+        for (User user : users) {
+            if (newpassword.equalsIgnoreCase(user.getPassword()))
+                return true;
+        }
+        return false;
+    }
+
+    public static void persistUsers() {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), users);
+        } catch (IOException e) {
+            throw new CouldNotWriteUsersException();
+        }
+    }
+
+    private static String encodePassword(String salt, String password) {
+        MessageDigest md = getMessageDigest();
+        md.update(salt.getBytes(StandardCharsets.UTF_8));
+
+        byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));
+
+        // This is the way a password should be encoded when checking the credentials
+        return new String(hashedPassword, StandardCharsets.UTF_8)
+                .replace("\"", ""); //to be able to save in JSON format
+    }
+
     private static MessageDigest getMessageDigest() {
         MessageDigest md;
         try {
