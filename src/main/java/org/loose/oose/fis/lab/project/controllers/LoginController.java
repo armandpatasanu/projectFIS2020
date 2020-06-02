@@ -1,9 +1,16 @@
 package org.loose.oose.fis.lab.project.controllers;
 
 
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -82,6 +89,22 @@ public class LoginController implements Initializable {
 
     }
 
-    public void openCreateAccountHandler(ActionEvent event) {
+    public void openCreateAccountHandler(ActionEvent event) throws IOException {
+        try {
+            Parent viewCreateAccountRoot = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/Register.fxml"));
+            Scene loginScene=logInButton.getScene();
+            viewCreateAccountRoot.translateYProperty().set(loginScene.getHeight());
+            rootPane.getChildren().add(viewCreateAccountRoot);
+            Timeline timeline=new Timeline();
+            KeyValue keyValue=new KeyValue(viewCreateAccountRoot.translateYProperty(),0, Interpolator.EASE_IN);
+            KeyFrame keyFrame=new KeyFrame(Duration.seconds(1),keyValue);
+            timeline.getKeyFrames().add(keyFrame);
+            timeline.play();
+            timeline.setOnFinished((ActionEvent event2)->{
+                rootPane.getChildren().remove(anchorPane);
+            });
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

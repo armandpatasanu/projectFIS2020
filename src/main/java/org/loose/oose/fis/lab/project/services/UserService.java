@@ -3,6 +3,8 @@ package org.loose.oose.fis.lab.project.services;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
+import org.loose.oose.fis.lab.project.exceptions.EmailAlreadyUsedException;
+import org.loose.oose.fis.lab.project.exceptions.UsernameAlreadyExistsException;
 import org.loose.oose.fis.lab.project.model.User;
 
 import java.io.IOException;
@@ -66,7 +68,18 @@ public class UserService {
         return new String(hashedPassword, StandardCharsets.UTF_8)
                 .replace("\"", ""); //to be able to save in JSON format
     }
-
+    private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
+        for (User user : users) {
+            if (Objects.equals(username, user.getUsername()))
+                throw new UsernameAlreadyExistsException(username);
+        }
+    }
+    private static void checkEmailDoesNotAlreadyExist(String email) throws EmailAlreadyUsedException {
+        for (User user : users) {
+            if (Objects.equals(email, user.getEmail()))
+                throw new EmailAlreadyUsedException(email);
+        }
+    }
     private static MessageDigest getMessageDigest() {
         MessageDigest md;
         try {
