@@ -1,0 +1,26 @@
+#logOutButton{
+  -fx-background-color: #FFFFFF;
+  -fx-border-color: #000000;
+  -fx-border-width: 0.8pt 0.8pt 0.8pt 0.8pt;
+  -fx-border-radius: 15px;
+  -fx-font-size: 10pt;
+  -fx-font-family: "Times New Roman";
+}
+#logOutButton:hover{
+  -fx-border-width: 0.5pt 0.5pt 0.5pt 0.5pt;
+  -fx-border-radius: 15px;
+  -fx-border-color: #521270;
+}
+#mainPageButton{
+  -fx-background-color: #FFFFFF;
+  -fx-border-color: #000000;
+  -fx-border-width: 0.8pt 0.8pt 0.8pt 0.8pt;
+  -fx-border-radius: 15px;
+  -fx-font-size: 10pt;
+  -fx-font-family: "Times New Roman";
+}
+#mainPageButton:hover{
+  -fx-border-width: 0.5pt 0.5pt 0.5pt 0.5pt;
+  -fx-border-radius: 15px;
+  -fx-border-color: #521270;
+}
