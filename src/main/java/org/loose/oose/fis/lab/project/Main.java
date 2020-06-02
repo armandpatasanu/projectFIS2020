@@ -2,6 +2,7 @@ package org.loose.oose.fis.lab.project;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import org.loose.oose.fis.lab.project.services.UserService;
 
 public class Main extends Application {
 
@@ -11,7 +12,9 @@ public class Main extends Application {
 
     public void start(Stage primaryStage) throws Exception{
 
+        UserService.loadUsersFromFile();
         Stage loginStage = Tools.createLoginStage(primaryStage);
+
         loginStage.show();
     }
 }
