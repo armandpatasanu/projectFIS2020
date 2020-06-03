@@ -97,4 +97,9 @@ public class UserProfileController implements Initializable {
         AnchorPane content =  FXMLLoader.load(getClass().getClassLoader().getResource("fxml/EditProfile.fxml"));
         mainPane.getChildren().add(content);
     }
+
+    public void addVideoHandler(ActionEvent event) throws IOException {
+        AnchorPane content =  FXMLLoader.load(getClass().getClassLoader().getResource("fxml/AddVideo.fxml"));
+        mainPane.getChildren().add(content);
+    }
 }
