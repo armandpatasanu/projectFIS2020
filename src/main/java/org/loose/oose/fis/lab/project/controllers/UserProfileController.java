@@ -2,6 +2,7 @@ package org.loose.oose.fis.lab.project.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -46,19 +47,28 @@ public class UserProfileController implements Initializable {
     private Text userEmailValue;
     @FXML
     private Text userAdressValue;
+    @FXML
+    private AnchorPane mainPane;
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         Image im=new Image(active_user.getPic_path());
+        Color c=null;
+        profileBackground.setFill(c.valueOf(active_user.getBack_color()));
         profilePic.setFill(new ImagePattern(im));
         init_settings(active_user);
+        AnchorPane content= new AnchorPane();
+        try {
+            content = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/EditProfile.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        mainPane.getChildren().add(content);
     }
 
     public void init_settings(User active_user) {
-        Color c = null;
-        profileBackground.setFill(c.valueOf(active_user.getBack_color()));
         userFullValue.setText(active_user.getFirstName() + " " + active_user.getLastName());
         usernameValue.setText("@" + active_user.getUsername());
         userAdressValue.setText(active_user.getCity() + "," + active_user.getCountry());
@@ -83,4 +93,8 @@ public class UserProfileController implements Initializable {
         loginStage.show();
     }
 
+    public void openEditProfileHandler(ActionEvent event) throws IOException {
+        AnchorPane content =  FXMLLoader.load(getClass().getClassLoader().getResource("fxml/EditProfile.fxml"));
+        mainPane.getChildren().add(content);
+    }
 }

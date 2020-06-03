@@ -20,12 +20,12 @@
                         <Image url="@../images/profile_background.jpg" />
                     </image>
                 </ImageView>
-                <Text fx:id="userFullValue" fontSmoothingType="LCD" layoutX="46.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" wrappingWidth="242.9999879002571">
+                <Text fx:id="userFullValue" fontSmoothingType="LCD" layoutX="46.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="aa" wrappingWidth="242.9999879002571">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Text>
-                <Text fx:id="usernameValue" fill="#a49595" fontSmoothingType="LCD" layoutX="46.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="242.9999879002571">
+                <Text fx:id="usernameValue" fill="#a49595" fontSmoothingType="LCD" layoutX="46.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sae" wrappingWidth="242.9999879002571">
                     <font>
                         <Font name="Times New Roman" size="18.0" />
                     </font>
@@ -40,12 +40,13 @@
                         <Font size="18.0" />
                     </font>
                 </Text>
+                <AnchorPane fx:id="mainPane" layoutX="340.0" layoutY="9.0" prefHeight="402.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" />
                 <Text fx:id="userEmailValue" layoutX="46.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="242.9999879002571">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Text>
-                <Label fx:id="userDescriptionValue" alignment="TOP_LEFT" layoutX="46.0" layoutY="135.0" prefHeight="125.0" prefWidth="243.0" wrapText="true">
+                <Label fx:id="userDescriptionValue" alignment="TOP_LEFT" layoutX="46.0" layoutY="110.0" prefHeight="150.0" prefWidth="243.0" wrapText="true">
                     <font>
                         <Font name="Arial" size="18.0" />
                     </font>
@@ -55,6 +56,6 @@
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="70.0" layoutY="196.0" stroke="#bfb6b6" strokeType="INSIDE" strokeWidth="2.0" width="1200.0" />
         <Circle fx:id="profilePic" fill="#fcfcfc" layoutX="174.0" layoutY="206.0" radius="100.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" />
         <Button fx:id="logOutButton" layoutX="1048.0" layoutY="214.0" mnemonicParsing="false" onAction="#logOutHandler" prefHeight="35.0" prefWidth="90.0" stylesheets="@../css/userProfile.css" text="Log out" />
-      <Button fx:id="mainPageButton" layoutX="920.0" layoutY="214.0" mnemonicParsing="false" onAction="#backToMainPageHandler" prefHeight="35.0" prefWidth="90.0" stylesheets="@../css/userProfile.css" text="Main page" />
+        <Button fx:id="editProfileButton" layoutX="665.0" layoutY="207.0" mnemonicParsing="false" onAction="#openEditProfileHandler" prefHeight="44.0" prefWidth="138.0" stylesheets="@../css/userProfile.css" text="Edit Profile" />
     </children>
 </AnchorPane>

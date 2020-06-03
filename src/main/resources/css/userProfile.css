@@ -24,3 +24,19 @@
   -fx-border-radius: 15px;
   -fx-border-color: #521270;
 }
+#editProfileButton{
+  -fx-background-color: #FFFFFF;
+  -fx-border-color: #34a88b;
+  -fx-border-radius: 50px 25px;
+  -fx-border-width: 1pt 1pt 1pt 1pt;
+  -fx-text-fill: #354f49;
+  -fx-font-family: Arial;
+  -fx-font-size: 16pt;
+}
+#editProfileButton:hover{
+  -fx-border-width: 1pt 1pt 1pt 1pt;
+  -fx-border-color: #b22222;
+  -fx-border-radius: 50px 25px;
+  -fx-font-size: 12pt;
+  -fx-font-weight: bold;
+}
