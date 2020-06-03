@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.oose.fis.lab.project.controllers.SearchPageController">
    <children>
@@ -12,5 +12,10 @@
             <Font size="42.0" />
          </font>
       </Label>
+      <Button fx:id="myProfileButton" layoutX="990.0" layoutY="33.0" mnemonicParsing="false" onAction="#openProfileHandler" text="My Profile">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
