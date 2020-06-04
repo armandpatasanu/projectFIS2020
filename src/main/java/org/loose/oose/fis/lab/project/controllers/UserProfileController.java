@@ -61,7 +61,7 @@ public class UserProfileController implements Initializable {
         init_settings(active_user);
         AnchorPane content= new AnchorPane();
         try {
-            content = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/EditProfile.fxml"));
+            content = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/WatchVideos.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -100,6 +100,11 @@ public class UserProfileController implements Initializable {
 
     public void addVideoHandler(ActionEvent event) throws IOException {
         AnchorPane content =  FXMLLoader.load(getClass().getClassLoader().getResource("fxml/AddVideo.fxml"));
+        mainPane.getChildren().add(content);
+    }
+
+    public void openVideosHandler(ActionEvent event) throws IOException {
+        AnchorPane content =  FXMLLoader.load(getClass().getClassLoader().getResource("fxml/WatchVideos.fxml"));
         mainPane.getChildren().add(content);
     }
 }

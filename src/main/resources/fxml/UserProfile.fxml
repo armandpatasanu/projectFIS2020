@@ -59,5 +59,10 @@
         <Button fx:id="mainPageButton" layoutX="948.0" layoutY="214.0" mnemonicParsing="false" onAction="#backToMainPageHandler" prefHeight="35.0" prefWidth="90.0" stylesheets="@../css/userProfile.css" text="Main page" />
         <Button fx:id="editProfileButton" layoutX="665.0" layoutY="207.0" mnemonicParsing="false" onAction="#openEditProfileHandler" prefHeight="44.0" prefWidth="138.0" stylesheets="@../css/userProfile.css" text="Edit Profile" />
         <Button fx:id="addVideoButton" layoutX="501.0" layoutY="206.0" mnemonicParsing="false" onAction="#addVideoHandler" prefHeight="44.0" prefWidth="138.0" stylesheets="@../css/userProfile.css" text="Add Video" />
+        <Button fx:id="videosButton" layoutX="365.0" layoutY="206.0" mnemonicParsing="false" onAction="#openVideosHandler" prefHeight="44.0" prefWidth="104.0" stylesheets="@../css/userProfile.css" text="Videos">
+            <font>
+                <Font name="Times New Roman" size="18.0" />
+            </font>
+        </Button>
     </children>
 </AnchorPane>
