@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -19,11 +20,9 @@
         </ImageView>
         <AnchorPane fx:id="videoPane" layoutX="-1.0" layoutY="-2.0" prefHeight="402.0" prefWidth="800.0">
             <children>
-                <Button fx:id="uploadVideoButton" layoutX="620.0" layoutY="324.0" mnemonicParsing="false" onAction="#addVideoHandler" prefHeight="43.0" prefWidth="83.0" stylesheets="@../css/userProfile.css" text="Upload" />
-                <TextField fx:id="videoCategoryValue" layoutX="545.0" layoutY="69.0" promptText="category" />
+                <Button fx:id="uploadVideoButton" layoutX="685.0" layoutY="324.0" mnemonicParsing="false" onAction="#addVideoHandler" prefHeight="43.0" prefWidth="83.0" stylesheets="@../css/userProfile.css" text="Upload" />
                 <TextField fx:id="videoTitleValue" layoutX="545.0" layoutY="138.0" promptText="title" />
                 <TextArea fx:id="videoDescriptionValue" layoutX="502.0" layoutY="211.0" prefHeight="92.0" prefWidth="201.0" promptText="enter a video description" wrapText="true" />
-                <Text fx:id="addVideoErrorText" fill="#e12727" fontSmoothingType="LCD" layoutX="138.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="148.99999582394958" />
                 <Button fx:id="loadVideoButton" layoutX="342.0" layoutY="175.0" mnemonicParsing="false" onAction="#searchVideoHandler" prefHeight="25.0" prefWidth="35.0" text=". . ." />
                 <MediaView fx:id="addVideoMedia" fitHeight="120.0" fitWidth="180.0" layoutX="178.0" layoutY="42.0" />
                 <TextField fx:id="videoPathValue" layoutX="181.0" layoutY="174.0" prefHeight="25.0" prefWidth="157.0" />
@@ -37,6 +36,8 @@
             <Label layoutX="56.0" layoutY="174.0" prefHeight="25.0" prefWidth="122.0" text="Pick a video to upload" />
             <Label layoutX="71.0" layoutY="245.0" prefHeight="25.0" prefWidth="107.0" text="Thumbnail preview" />
             <Label layoutX="56.0" layoutY="345.0" prefHeight="25.0" prefWidth="122.0" text="Find a video thumbnail" />
+            <ChoiceBox fx:id="categoryChoiceBox" layoutX="545.0" layoutY="70.0" prefWidth="150.0" />
+                <Text fx:id="addVideoErrorText" fill="#e12727" fontSmoothingType="LCD" layoutX="469.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="208.99999582394958" />
             </children>
         </AnchorPane>
     </children>

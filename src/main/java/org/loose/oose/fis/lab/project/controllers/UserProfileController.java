@@ -16,6 +16,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.oose.fis.lab.project.Tools;
 import org.loose.oose.fis.lab.project.model.User;
+import org.loose.oose.fis.lab.project.services.VideoService;
 
 import java.io.IOException;
 import java.net.URL;
@@ -62,7 +63,10 @@ public class UserProfileController implements Initializable {
         AnchorPane content= new AnchorPane();
         try {
             content = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/WatchVideos.fxml"));
+            VideoService.setUsersVideos(active_user);
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         mainPane.getChildren().add(content);
@@ -103,8 +107,9 @@ public class UserProfileController implements Initializable {
         mainPane.getChildren().add(content);
     }
 
-    public void openVideosHandler(ActionEvent event) throws IOException {
+    public void openVideosHandler(ActionEvent event) throws Exception {
         AnchorPane content =  FXMLLoader.load(getClass().getClassLoader().getResource("fxml/WatchVideos.fxml"));
         mainPane.getChildren().add(content);
+        VideoService.setUsersVideos(active_user);
     }
 }
