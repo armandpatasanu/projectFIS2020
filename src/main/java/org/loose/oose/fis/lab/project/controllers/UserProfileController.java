@@ -16,6 +16,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.loose.oose.fis.lab.project.Tools;
 import org.loose.oose.fis.lab.project.model.User;
+import org.loose.oose.fis.lab.project.services.VideoService;
 
 import java.io.IOException;
 import java.net.URL;
@@ -61,8 +62,11 @@ public class UserProfileController implements Initializable {
         init_settings(active_user);
         AnchorPane content= new AnchorPane();
         try {
-            content = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/EditProfile.fxml"));
+            content = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/WatchVideos.fxml"));
+            VideoService.setUsersVideos(active_user);
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         mainPane.getChildren().add(content);
@@ -96,5 +100,16 @@ public class UserProfileController implements Initializable {
     public void openEditProfileHandler(ActionEvent event) throws IOException {
         AnchorPane content =  FXMLLoader.load(getClass().getClassLoader().getResource("fxml/EditProfile.fxml"));
         mainPane.getChildren().add(content);
+    }
+
+    public void addVideoHandler(ActionEvent event) throws IOException {
+        AnchorPane content =  FXMLLoader.load(getClass().getClassLoader().getResource("fxml/AddVideo.fxml"));
+        mainPane.getChildren().add(content);
+    }
+
+    public void openVideosHandler(ActionEvent event) throws Exception {
+        AnchorPane content =  FXMLLoader.load(getClass().getClassLoader().getResource("fxml/WatchVideos.fxml"));
+        mainPane.getChildren().add(content);
+        VideoService.setUsersVideos(active_user);
     }
 }

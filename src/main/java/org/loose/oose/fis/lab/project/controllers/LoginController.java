@@ -25,6 +25,7 @@ import static org.loose.oose.fis.lab.project.services.UserService.*;
 import org.loose.oose.fis.lab.project.Tools;
 import org.loose.oose.fis.lab.project.model.User;
 import org.loose.oose.fis.lab.project.services.UserService;
+import org.loose.oose.fis.lab.project.services.VideoService;
 
 
 import java.io.IOException;

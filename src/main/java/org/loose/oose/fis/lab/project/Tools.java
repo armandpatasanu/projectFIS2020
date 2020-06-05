@@ -2,10 +2,14 @@ package org.loose.oose.fis.lab.project;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -91,5 +95,17 @@ public class Tools
             }
         });
         return primaryStage;
+    }
+    public static void AlertBox(String message) {
+        Stage s = new Stage();
+        s.initModality(Modality.APPLICATION_MODAL);
+        Label l1=new Label();
+        l1.setText(message);
+        VBox layout =new VBox(10);
+        layout.getChildren().addAll(l1);
+        layout.setAlignment(Pos.CENTER);
+        Scene sc = new Scene(layout,300,150);
+        s.setScene(sc);
+        s.showAndWait();
     }
 }

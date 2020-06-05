@@ -93,16 +93,12 @@ public class EditProfileController implements Initializable {
             active_user.setCountry(new_country);
 
         UserService.persistUsers();
-        System.out.println(active_user.getBack_color());
-        usersCityValue.clear();
-        usersNumberValue.clear();
-        descriptionTextArea.clear();
-        System.out.println("Profil editat cu succes!");
         Stage modified_stage =new Stage();
         modified_stage= Tools.createProfileStage(modified_stage);
         modified_stage.show();
         Stage prevStage = (Stage) saveButton.getScene().getWindow();
         prevStage.close();
+        Tools.AlertBox("Profilul a fost editat cu succes!");
 
     };
     public void searchNewImageHandler(ActionEvent event) throws IOException {
