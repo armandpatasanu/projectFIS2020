@@ -25,6 +25,8 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Objects;
 
+import static org.loose.oose.fis.lab.project.Tools.createMediaPlayerStage;
+import static org.loose.oose.fis.lab.project.Tools.createSearchedVideosStage;
 import static org.loose.oose.fis.lab.project.other.ConfirmBox.answer;
 
 public class VideoService {
@@ -88,6 +90,14 @@ public class VideoService {
         button.setCursor(Cursor.HAND);
         button.setOnAction(e -> {
             System.out.println("Ati apasat pe videoclipul cu titlul: " + title);
+            Stage stage=new Stage();
+            Stage s = null;
+            try {
+                s = createMediaPlayerStage(stage);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            s.show();
         });
         deleteButton.setOnAction(e-> {
             if(ConfirmBox.display("Sigur stergeti acest video?")){
@@ -138,6 +148,14 @@ public class VideoService {
         button.setCursor(Cursor.HAND);
         button.setOnAction(e -> {
             System.out.println("Ati apasat pe videoclipul cu titlul: " + title);
+            Stage stage=new Stage();
+            Stage s = null;
+            try {
+                s = createMediaPlayerStage(stage);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            s.show();
         });
 
         Label vdescription= new Label(description);
