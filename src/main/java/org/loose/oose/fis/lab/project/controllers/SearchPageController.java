@@ -9,6 +9,8 @@ import java.io.IOException;
 
 import static org.loose.oose.fis.lab.project.Tools.createProfileStage;
 
+import static org.loose.oose.fis.lab.project.Tools.createSearchedVideosStage;
+
 
 public class SearchPageController {
 
@@ -52,7 +54,12 @@ public class SearchPageController {
     }
 
     public void buttonClicked(String category) throws IOException{
-
+        current_category = category;
+        Stage prevStage = (Stage) myProfileButton.getScene().getWindow();
+        prevStage.close();
+        Stage stage=new Stage();
+        Stage profileStage = createSearchedVideosStage(stage);
+        profileStage.show();
     }
 
     public void xPressedHandler(){

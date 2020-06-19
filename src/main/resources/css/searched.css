@@ -1,0 +1,48 @@
+#myProfileB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: black;
+    -fx-border-radius: 25px;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-text-fill: black;
+    -fx-font-family: Arial;
+    -fx-font-size: 16pt;
+}
+#backToMainB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: black;
+    -fx-border-radius: 25px;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-text-fill: black;
+    -fx-font-family: Arial;
+    -fx-font-size: 16pt;
+}
+
+#myProfileB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: gray;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2pt 2pt 2pt 2pt;
+    -fx-text-fill: gray;
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+#backToMainB:hover{
+     -fx-background-color: rgba(255, 0, 0, 0);
+     -fx-border-color: gray;
+     -fx-border-radius: 25px;
+     -fx-border-width: 2pt 2pt 2pt 2pt;
+     -fx-text-fill: gray;
+     -fx-font-family: Arial;
+     -fx-font-size: 14pt;
+     -fx-font-weight: bold;
+ }
+
+#xB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+}
+
+#list{
+    -fx-background-color: rgba(255, 0, 0, 0);
+}
+
