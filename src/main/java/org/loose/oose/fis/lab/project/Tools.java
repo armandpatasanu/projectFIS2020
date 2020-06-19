@@ -6,8 +6,10 @@ import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
@@ -107,5 +109,31 @@ public class Tools
         Scene sc = new Scene(layout,300,150);
         s.setScene(sc);
         s.showAndWait();
+    }
+
+    public static Stage createEditVideoStage(Stage primaryStage) throws java.io.IOException {
+
+        Parent root = FXMLLoader.load(Objects.requireNonNull(Tools.class.getClassLoader().getResource("fxml/EditVideo.fxml")));
+        primaryStage.setTitle("Video Edit video");
+        primaryStage.setScene(new Scene(root, 710, 400));
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.show();
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        primaryStage.setX((primScreenBounds.getWidth() - primaryStage.getWidth()) / 2);
+        primaryStage.setY((primScreenBounds.getHeight() - primaryStage.getHeight()) / 2);
+
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                xOffset = primaryStage.getX() - event.getScreenX();
+                yOffset = primaryStage.getY() - event.getScreenY();
+            }
+        });
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                primaryStage.setX(event.getScreenX() + xOffset);
+                primaryStage.setY(event.getScreenY() + yOffset);
+            }
+        });
+        return primaryStage;
     }
 }
