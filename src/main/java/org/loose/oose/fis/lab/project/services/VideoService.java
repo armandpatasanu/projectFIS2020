@@ -77,6 +77,7 @@ public class VideoService {
         HBox h=new HBox(20);
         video_slot.setAlignment(Pos.CENTER);
         video_slot.setPadding(new Insets(5));
+        v.setPadding(new Insets(20, 0, 0, 0));
         h.setAlignment(Pos.CENTER);
         video_slot.setStyle("-fx-border-color:#b22222;-fx-border-weight:thin;");
         Button button = new Button();
@@ -145,6 +146,7 @@ public class VideoService {
         active_video=getVideo(title);
         HBox video_slot=new HBox(20);
         VBox v=new VBox(3);
+        v.setPadding(new Insets(20, 0, 0, 0));
         video_slot.setAlignment(Pos.CENTER);
         video_slot.setPadding(new Insets(5));
         video_slot.setStyle("-fx-border-color:#b22222;-fx-border-weight:thin;");
