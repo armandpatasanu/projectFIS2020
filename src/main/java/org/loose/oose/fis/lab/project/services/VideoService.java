@@ -77,6 +77,7 @@ public class VideoService {
         HBox h=new HBox(20);
         video_slot.setAlignment(Pos.CENTER);
         video_slot.setPadding(new Insets(5));
+        v.setPadding(new Insets(20, 0, 0, 0));
         h.setAlignment(Pos.CENTER);
         video_slot.setStyle("-fx-border-color:#b22222;-fx-border-weight:thin;");
         Button button = new Button();
@@ -98,6 +99,7 @@ public class VideoService {
         seeReviewsButton.setOnAction(e -> Tools.reviewAlertBox());
         button.setOnAction(e -> {
             System.out.println("Ati apasat pe videoclipul cu titlul: " + title);
+            active_video=getVideo(title);
             Stage stage=new Stage();
             Stage s = null;
             try {
@@ -145,6 +147,7 @@ public class VideoService {
         active_video=getVideo(title);
         HBox video_slot=new HBox(20);
         VBox v=new VBox(3);
+        v.setPadding(new Insets(20, 0, 0, 0));
         video_slot.setAlignment(Pos.CENTER);
         video_slot.setPadding(new Insets(5));
         video_slot.setStyle("-fx-border-color:#b22222;-fx-border-weight:thin;");
@@ -160,6 +163,7 @@ public class VideoService {
         button.setCursor(Cursor.HAND);
         button.setOnAction(e -> {
             System.out.println("Ati apasat pe videoclipul cu titlul: " + title);
+            active_video=getVideo(title);
             Stage stage=new Stage();
             Stage s = null;
             try {

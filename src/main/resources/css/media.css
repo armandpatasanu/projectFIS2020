@@ -2,6 +2,19 @@
     -fx-background-color: rgba(255, 0, 0, 0);
 }
 
+#likeB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: #4863bd;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-border-radius: 30px;
+}
+#dislikeB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: #f51414;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-border-radius: 30px;
+}
+
 #media{
     -fx-background-color: black;
 }

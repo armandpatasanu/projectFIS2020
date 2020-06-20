@@ -18,9 +18,9 @@
       <ListView fx:id="list" layoutX="257.0" layoutY="82.0" prefHeight="509.0" prefWidth="705.0" />
       <Button fx:id="backToMainB" layoutX="315.0" layoutY="611.0" mnemonicParsing="false" onAction="#backToMainHandler" text="Back To Main Page" />
       <Button fx:id="myProfileB" layoutX="763.0" layoutY="611.0" mnemonicParsing="false" onAction="#myProfileHandler" text="My Profile" />
-      <Label fx:id="l" layoutX="263.0" layoutY="272.0" prefHeight="97.0" prefWidth="697.0">
+      <Label fx:id="l" layoutX="384.0" layoutY="272.0" prefHeight="232.0" prefWidth="438.0">
          <font>
-            <Font size="36.0" />
+            <Font size="24.0" />
          </font>
       </Label>
       <Button layoutX="1136.0" mnemonicParsing="false" onAction="#xPressedHandler" prefHeight="33.0" prefWidth="33.0" text="x" fx:id="xB">

@@ -166,8 +166,8 @@ public class Tools
 
     public static Stage createMediaPlayerStage(Stage primaryStage) throws java.io.IOException{
         Parent root = FXMLLoader.load(Objects.requireNonNull(Tools.class.getClassLoader().getResource("fxml/MediaPlayer.fxml")));
-        primaryStage.setTitle("Searched Videos");
-        primaryStage.setScene(new Scene(root, 650, 400));
+        primaryStage.setTitle(active_video.getTitle() + " - " + active_video.getUploader());
+        primaryStage.setScene(new Scene(root, 650, 395));
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
