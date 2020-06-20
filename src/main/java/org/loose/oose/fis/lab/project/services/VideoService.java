@@ -99,6 +99,7 @@ public class VideoService {
         seeReviewsButton.setOnAction(e -> Tools.reviewAlertBox());
         button.setOnAction(e -> {
             System.out.println("Ati apasat pe videoclipul cu titlul: " + title);
+            active_video=getVideo(title);
             Stage stage=new Stage();
             Stage s = null;
             try {
@@ -162,6 +163,7 @@ public class VideoService {
         button.setCursor(Cursor.HAND);
         button.setOnAction(e -> {
             System.out.println("Ati apasat pe videoclipul cu titlul: " + title);
+            active_video=getVideo(title);
             Stage stage=new Stage();
             Stage s = null;
             try {

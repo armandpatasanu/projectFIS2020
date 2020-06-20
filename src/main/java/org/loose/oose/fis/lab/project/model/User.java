@@ -1,5 +1,10 @@
 package org.loose.oose.fis.lab.project.model;
 
+import org.loose.oose.fis.lab.project.other.Review;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 
     private String back_color;
@@ -13,6 +18,7 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private List<Review> reviews = new ArrayList<>();
 
     public User(){ }
 
@@ -113,6 +119,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     public boolean equals(Object o) {
