@@ -18,6 +18,8 @@ import javafx.stage.StageStyle;
 
 import java.util.Objects;
 
+import static org.loose.oose.fis.lab.project.services.VideoService.active_video;
+
 public class Tools
 {
     private static double xOffset = 0;
@@ -185,5 +187,35 @@ public class Tools
             }
         });
         return primaryStage;
+    }
+
+    public static void reviewAlertBox(){
+        Stage s = new Stage();
+        s.initModality(Modality.APPLICATION_MODAL);
+        s.setTitle(active_video.getTitle() + ": reviews");
+        VBox v = new VBox(20);
+        v.setAlignment(Pos.CENTER);
+        HBox h = new HBox(30);
+        h.setAlignment(Pos.CENTER);
+        Button okB = new Button("Ok");
+        okB.setOnAction(e -> s.close());
+        Label l1 = new Label("Number of Likes: " + active_video.getLikes());
+        Label l2 = new Label("Number of Dislikes: " + active_video.getDislikes());
+        Label l3 = new Label("Success rate of video: " + successRateForVideo());
+        h.getChildren().addAll(l1, l2);
+        v.getChildren().addAll(h, l3, okB);
+        Scene scene = new Scene(v,300,150);
+        s.setScene(scene);
+        s.showAndWait();
+    }
+
+    public static String successRateForVideo(){
+        if((active_video.getLikes() == 0) && (active_video.getDislikes() == 0)){
+            return "not rated";
+        }
+        else {
+            int rate = (100 * active_video.getLikes()) / (active_video.getLikes() + active_video.getDislikes());
+            return "" + rate + " %";
+        }
     }
 }

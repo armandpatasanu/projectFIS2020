@@ -2,6 +2,7 @@ package org.loose.oose.fis.lab.project.services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
@@ -73,7 +74,10 @@ public class VideoService {
         active_video=getVideo(title);
         HBox video_slot=new HBox(20);
         VBox v=new VBox(3);
-        HBox h=new HBox(10);
+        HBox h=new HBox(20);
+        video_slot.setAlignment(Pos.CENTER);
+        video_slot.setPadding(new Insets(5));
+        h.setAlignment(Pos.CENTER);
         video_slot.setStyle("-fx-border-color:#b22222;-fx-border-weight:thin;");
         Button button = new Button();
         Region rg=new Region();
@@ -81,6 +85,9 @@ public class VideoService {
         Button editButton=new Button("Edit");
         Button deleteButton=new Button("Delete");
         Button seeReviewsButton=new Button("See Reviews");
+        editButton.setStyle("-fx-background-color: rgba(255, 0, 0, 0); -fx-border-color: black; -fx-border-radius: 15px; -fx-border-width: 1pt 1pt 1pt 1pt;");
+        deleteButton.setStyle("-fx-background-color: rgba(255, 0, 0, 0); -fx-border-color: black; -fx-border-radius: 15px; -fx-border-width: 1pt 1pt 1pt 1pt;");
+        seeReviewsButton.setStyle("-fx-background-color: rgba(255, 0, 0, 0); -fx-border-color: black; -fx-border-radius: 15px; -fx-border-width: 1pt 1pt 1pt 1pt;");
         Image im=new Image(vthumb,175,100,false,true);
         BackgroundImage iM = new BackgroundImage(im, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
         Background bg = new Background(iM);
@@ -88,6 +95,7 @@ public class VideoService {
         button.setStyle("-fx-border-color:#80bfff; -fx-border-width: 1pt 1pt 1pt 1pt;");
         button.setPrefSize(175,100);
         button.setCursor(Cursor.HAND);
+        seeReviewsButton.setOnAction(e -> Tools.reviewAlertBox());
         button.setOnAction(e -> {
             System.out.println("Ati apasat pe videoclipul cu titlul: " + title);
             Stage stage=new Stage();
@@ -123,6 +131,8 @@ public class VideoService {
         vdescription.setPrefSize(150,100);
         vdescription.setWrapText(true);
         Text vtitle=new Text(title);
+        vdescription.setStyle("-fx-text-fill: gray; -fx-font-family: Arial; -fx-font-size: 12pt;");
+        vtitle.setStyle("-fx-text-fill: black; -fx-font-family: Arial; -fx-font-size: 14pt; -fx-font-weight: bold;");
         v.getChildren().addAll(vtitle,vdescription);
         h.getChildren().addAll(seeReviewsButton,editButton,deleteButton);
         video_slot.getChildren().addAll(button,v,rg,h);
@@ -135,6 +145,8 @@ public class VideoService {
         active_video=getVideo(title);
         HBox video_slot=new HBox(20);
         VBox v=new VBox(3);
+        video_slot.setAlignment(Pos.CENTER);
+        video_slot.setPadding(new Insets(5));
         video_slot.setStyle("-fx-border-color:#b22222;-fx-border-weight:thin;");
         Button button = new Button();
         Region rg=new Region();
@@ -162,6 +174,8 @@ public class VideoService {
         vdescription.setPrefSize(150,100);
         vdescription.setWrapText(true);
         Text vtitle=new Text(title);
+        vdescription.setStyle("-fx-text-fill: gray; -fx-font-family: Arial; -fx-font-size: 12pt;");
+        vtitle.setStyle("-fx-text-fill: black; -fx-font-family: Arial; -fx-font-size: 14pt; -fx-font-weight: bold;");
         v.getChildren().addAll(vtitle,vdescription);
         video_slot.getChildren().addAll(button,v,rg);
         video_slot.setAlignment(Pos.CENTER_LEFT);
