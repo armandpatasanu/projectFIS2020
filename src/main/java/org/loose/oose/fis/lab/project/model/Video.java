@@ -9,6 +9,7 @@ public class Video {
     private String category;
     private int likes;
     private int dislikes;
+    private String successRate;
 
     public Video() {
     }
@@ -86,6 +87,14 @@ public class Video {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getSuccessRate() {
+        return successRate;
+    }
+
+    public void setSuccessRate(String successRate) {
+        this.successRate = successRate;
     }
 
     @Override
