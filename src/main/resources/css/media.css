@@ -1,0 +1,12 @@
+.button{
+    -fx-background-color: rgba(255, 0, 0, 0);
+}
+
+#media{
+    -fx-background-color: black;
+}
+
+#pane{
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-border-color: black;
+}
