@@ -16,7 +16,7 @@ public class WatchVideosController implements Initializable {
     @FXML
     private ListView listView;
     @FXML
-    private Text TextAlert;
+    private Text TextAlert=new Text();
 
     @FXML
     public void initialize(URL location, ResourceBundle resources)

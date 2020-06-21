@@ -17,6 +17,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.loose.oose.fis.lab.project.Tools;
+import org.loose.oose.fis.lab.project.model.User;
 import org.loose.oose.fis.lab.project.services.UserService;
 
 import java.io.File;
@@ -36,18 +37,50 @@ public class EditProfileController implements Initializable {
     @FXML
     private Circle picturePreview;
     @FXML
-    private ComboBox<String> countryComboBox;
+    private ComboBox<String> countryComboBox=new ComboBox<>();
     @FXML
-    private TextArea descriptionTextArea;
+    private TextArea descriptionTextArea=new TextArea();
     private static final int LIMIT = 150;
     @FXML
     private ColorPicker backgroundColorPicker;
     @FXML
-    private TextField usersCityValue;
+    private TextField usersCityValue=new TextField();
     @FXML
-    private TextField usersNumberValue;
+    private TextField usersNumberValue=new TextField();
     @FXML
     private Button saveButton;
+
+    public ComboBox<String> getCountryComboBox() {
+        return countryComboBox;
+    }
+
+    public void setCountryComboBox(ComboBox<String> countryComboBox) {
+        this.countryComboBox = countryComboBox;
+    }
+
+    public TextArea getDescriptionTextArea() {
+        return descriptionTextArea;
+    }
+
+    public void setDescriptionTextArea(TextArea descriptionTextArea) {
+        this.descriptionTextArea = descriptionTextArea;
+    }
+
+    public TextField getUsersCityValue() {
+        return usersCityValue;
+    }
+
+    public void setUsersCityValue(TextField usersCityValue) {
+        this.usersCityValue = usersCityValue;
+    }
+
+    public TextField getUsersNumberValue() {
+        return usersNumberValue;
+    }
+
+    public void setUsersNumberValue(TextField usersNumberValue) {
+        this.usersNumberValue = usersNumberValue;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

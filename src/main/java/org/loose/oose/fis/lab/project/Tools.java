@@ -111,6 +111,7 @@ public class Tools
         Scene sc = new Scene(layout,300,150);
         s.setScene(sc);
         s.showAndWait();
+
     }
 
     public static Stage createEditVideoStage(Stage primaryStage) throws java.io.IOException {

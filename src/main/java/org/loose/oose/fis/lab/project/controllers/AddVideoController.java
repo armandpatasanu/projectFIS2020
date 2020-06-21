@@ -1,6 +1,7 @@
 package org.loose.oose.fis.lab.project.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
@@ -16,6 +17,7 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.loose.oose.fis.lab.project.Tools;
+import org.loose.oose.fis.lab.project.model.User;
 import org.loose.oose.fis.lab.project.services.VideoService;
 
 import java.io.File;
@@ -28,24 +30,72 @@ public class AddVideoController implements Initializable {
 
     private WatchVideosController wvc;
     @FXML
-    private TextField videoTitleValue;
+    private TextField videoTitleValue=new TextField();
     @FXML
-    private TextArea videoDescriptionValue;
+    private TextArea videoDescriptionValue=new TextArea();
     @FXML
     private Text addVideoErrorText;
     @FXML
-    private ChoiceBox<String> categoryChoiceBox;
+    private ChoiceBox<String> categoryChoiceBox=new ChoiceBox<>();
     @FXML
     private AnchorPane videoPane;
     @FXML
-    private MediaView addVideoMedia;
+    private MediaView addVideoMedia=new MediaView();
     @FXML
-    private TextField videoPathValue;
+    private TextField videoPathValue=new TextField();
     @FXML
-    private TextField thumbnailPathValue;
+    private TextField thumbnailPathValue=new TextField();
     @FXML
-    private ImageView videoThumbnail;
+    private ImageView videoThumbnail=new ImageView();
     private File file;
+
+    public TextField getVideoTitleValue() {
+        return videoTitleValue;
+    }
+
+    public void setVideoTitleValue(TextField videoTitleValue) {
+        this.videoTitleValue = videoTitleValue;
+    }
+
+    public TextArea getVideoDescriptionValue() {
+        return videoDescriptionValue;
+    }
+
+    public void setVideoDescriptionValue(TextArea videoDescriptionValue) {
+        this.videoDescriptionValue = videoDescriptionValue;
+    }
+
+    public Text getAddVideoErrorText() {
+        return addVideoErrorText;
+    }
+
+    public void setAddVideoErrorText(Text addVideoErrorText) {
+        this.addVideoErrorText = addVideoErrorText;
+    }
+
+    public ChoiceBox<String> getCategoryChoiceBox() {
+        return categoryChoiceBox;
+    }
+
+    public void setCategoryChoiceBox(ChoiceBox<String> categoryChoiceBox) {
+        this.categoryChoiceBox = categoryChoiceBox;
+    }
+
+    public TextField getVideoPathValue() {
+        return videoPathValue;
+    }
+
+    public void setVideoPathValue(TextField videoPathValue) {
+        this.videoPathValue = videoPathValue;
+    }
+
+    public TextField getThumbnailPathValue() {
+        return thumbnailPathValue;
+    }
+
+    public void setThumbnailPathValue(TextField thumbnailPathValue) {
+        this.thumbnailPathValue = thumbnailPathValue;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -78,7 +128,6 @@ public class AddVideoController implements Initializable {
             videoThumbnail.setStyle("-fx-border-color:black;-fx-border-width:thin;");
             thumbnailPathValue.setText(file.toURI().toString());
         }
-
     }
     public void addVideoHandler(ActionEvent event) {
         String vcategory=categoryChoiceBox.getValue();

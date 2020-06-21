@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/media.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.oose.fis.lab.project.controllers.MediaPlayerController">
+   <children>
+      <MediaView fx:id="media" fitHeight="350.0" fitWidth="650.0" />
+      <HBox fx:id="h" layoutY="332.0" prefHeight="60.0" prefWidth="650.0" spacing="100.0">
+         <children>
+            <Button fx:id="pauseB" mnemonicParsing="false" onAction="#pausePressed" prefHeight="63.0" prefWidth="71.0" text="Pause">
+               <font>
+                  <Font name="Arial Bold" size="16.0" />
+               </font>
+            </Button>
+            <HBox prefHeight="41.0" prefWidth="465.0" spacing="50.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="likeB" mnemonicParsing="false" onAction="#likePressed" text="👍" textFill="#4863bd">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="nrOfLikes" prefHeight="45.0" prefWidth="45.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="7.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="dislikeB" mnemonicParsing="false" onAction="#dislikePressed" text="👎" textFill="#f51414">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="nrOfDislikes" prefHeight="43.0" prefWidth="43.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="7.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></HBox>
+      <Button layoutX="615.0" layoutY="-12.0" mnemonicParsing="false" onAction="#xPressedHandler" prefHeight="41.0" prefWidth="35.0" text="x" textFill="WHITE" fx:id="xB">
+         <font>
+            <Font name="Comic Sans MS Bold" size="24.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="image" fitHeight="311.0" fitWidth="688.0" layoutX="44.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

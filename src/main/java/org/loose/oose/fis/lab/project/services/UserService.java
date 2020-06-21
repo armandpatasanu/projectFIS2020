@@ -22,7 +22,7 @@ import java.util.Objects;
 public class UserService {
 
     private static List<User> users;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "json/users.json");
+    public static final Path USERS_PATH = FileSystemService.getPathToFile("config", "json/users.json");
 
     public static User getUser(String name)
     {
@@ -49,13 +49,14 @@ public class UserService {
         }
         return false;
     }
-    private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
+    public static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
         for (User user : users) {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
         }
     }
-    private static void checkEmailDoesNotAlreadyExist(String email) throws EmailAlreadyUsedException {
+
+    public static void checkEmailDoesNotAlreadyExist(String email) throws EmailAlreadyUsedException {
         for (User user : users) {
             if (Objects.equals(email, user.getEmail()))
                 throw new EmailAlreadyUsedException(email);
@@ -109,5 +110,9 @@ public class UserService {
             throw new IllegalStateException("SHA-512 does not exist!");
         }
         return md;
+    }
+
+    public static List<User> getUsers() {
+        return users;
     }
 }
