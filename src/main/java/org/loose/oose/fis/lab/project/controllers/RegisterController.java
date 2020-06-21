@@ -28,21 +28,69 @@ public class RegisterController implements Initializable {
     @FXML
     private Text registerMessage;
     @FXML
-    private TextField fnamefield;
+    private TextField fnamefield=new TextField();
     @FXML
-    private TextField lnamefield;
+    private TextField lnamefield=new TextField();
     @FXML
-    private TextField userfield;
+    private TextField userfield=new TextField();
     @FXML
-    private TextField emailfield;
+    private TextField emailfield=new TextField();
     @FXML
-    private TextField passwordfield;
+    private TextField passwordfield=new TextField();
     @FXML
     private AnchorPane anchorpane;
     @FXML
     private Label lblRegister;
 
-    public void createAccountHandler(ActionEvent event) {
+    public Text getRegisterMessage() {
+        return registerMessage;
+    }
+
+    public void setRegisterMessage(Text registerMessage) {
+        this.registerMessage = registerMessage;
+    }
+
+    public TextField getFnamefield() {
+        return fnamefield;
+    }
+
+    public void setFnamefield(TextField fnamefield) {
+        this.fnamefield = fnamefield;
+    }
+
+    public TextField getLnamefield() {
+        return lnamefield;
+    }
+
+    public void setLnamefield(TextField lnamefield) {
+        this.lnamefield = lnamefield;
+    }
+
+    public TextField getUserfield() {
+        return userfield;
+    }
+
+    public void setUserfield(TextField userfield) {
+        this.userfield = userfield;
+    }
+
+    public TextField getEmailfield() {
+        return emailfield;
+    }
+
+    public void setEmailfield(TextField emailfield) {
+        this.emailfield = emailfield;
+    }
+
+    public TextField getPasswordfield() {
+        return passwordfield;
+    }
+
+    public void setPasswordfield(TextField passwordfield) {
+        this.passwordfield = passwordfield;
+    }
+
+    public void createAccountHandler() {
         String firstname = fnamefield.getText();
         String lastname = lnamefield.getText();
         String user = userfield.getText();
@@ -66,8 +114,7 @@ public class RegisterController implements Initializable {
             registerMessage.setText("Password cannot be empty");
             return;
         }
-        if (email == null || email.isEmpty())
-        {
+        if (email == null || email.isEmpty()) {
             registerMessage.setText("A valid email must be entered!");
             return;
         } else
@@ -94,9 +141,7 @@ public class RegisterController implements Initializable {
                 registerMessage.setText(e.getMessage());
             }
 
-
     }
-
     public void backToLoginHandler(ActionEvent event) throws IOException
     {
         try {
@@ -117,6 +162,7 @@ public class RegisterController implements Initializable {
             e.printStackTrace();
         }
     }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -33,10 +33,10 @@ import static org.loose.oose.fis.lab.project.other.ConfirmBox.answer;
 public class VideoService {
 
     public static Video active_video;
-    private static WatchVideosController wvc;
+    private static WatchVideosController wvc=new WatchVideosController();
     private static SearchedVideosController svc;
     public static List<Video> videos;
-    private static final Path VIDEOS_PATH = FileSystemService.getPathToFile("config", "json/videos.json");
+    public static final Path VIDEOS_PATH = FileSystemService.getPathToFile("config", "json/videos.json");
 
     public static Video getVideo(String title)
     {
@@ -223,5 +223,9 @@ public class VideoService {
         }
         if(vcont==0)
             svc.setMessage("There are no videos in this category, yet...");
+    }
+
+    public static List<Video> getVideos() {
+        return videos;
     }
 }

@@ -132,7 +132,8 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) {
             return true;
-        } else if (o != null && this.getClass() == o.getClass()) {
+        } else if (o != null && this.getClass() == o.getClass())
+        {
             User user = (User)o;
             if (!this.username.equals(user.username)) {
                 return false;
@@ -154,10 +155,6 @@ public class User {
         result = 31 * result + this.firstName.hashCode();
         result = 31 * result + this.lastName.hashCode();
         result = 31 * result + this.email.hashCode();
-        result = 31 * result + this.description.hashCode();
-        result = 31 * result + this.city.hashCode();
-        result = 31 * result + this.country.hashCode();
-        result = 31 * result + this.phone.hashCode();
         return result;
     }
 
