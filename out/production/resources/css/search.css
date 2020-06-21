@@ -1,0 +1,178 @@
+#animalsB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: black;
+    -fx-border-radius: 25px;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-text-fill: #354f49;
+    -fx-font-family: Arial;
+    -fx-font-size: 16pt;
+}
+#carsB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: black;
+    -fx-border-radius: 25px;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-text-fill: #354f49;
+    -fx-font-family: Arial;
+    -fx-font-size: 16pt;
+}
+#foodB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+        -fx-border-color: black;
+        -fx-border-radius: 25px;
+        -fx-border-width: 1pt 1pt 1pt 1pt;
+        -fx-text-fill: #354f49;
+        -fx-font-family: Arial;
+        -fx-font-size: 16pt;
+}
+#funnyB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+        -fx-border-color: black;
+        -fx-border-radius: 25px;
+        -fx-border-width: 1pt 1pt 1pt 1pt;
+        -fx-text-fill: #354f49;
+        -fx-font-family: Arial;
+        -fx-font-size: 16pt;
+}
+#gamingB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: white;
+    -fx-border-radius: 25px;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-size: 16pt;
+}
+#natureB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: white;
+    -fx-border-radius: 25px;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-size: 16pt;
+}
+#musicB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: white;
+    -fx-border-radius: 25px;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-size: 16pt;
+}
+#sportsB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: white;
+    -fx-border-radius: 25px;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-size: 16pt;
+}
+
+
+#sportsB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: red;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2pt 2pt 2pt 2pt;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+#animalsB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: red;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2pt 2pt 2pt 2pt;
+    -fx-text-fill: black;
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+#carsB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: red;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2pt 2pt 2pt 2pt;
+    -fx-text-fill: black;
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+#foodB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: red;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2pt 2pt 2pt 2pt;
+    -fx-text-fill: black;
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+#funnyB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: red;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2pt 2pt 2pt 2pt;
+    -fx-text-fill: black;
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+#gamingB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: red;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2pt 2pt 2pt 2pt;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+#natureB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: red;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2pt 2pt 2pt 2pt;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+#musicB:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: red;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2pt 2pt 2pt 2pt;
+    -fx-text-fill: white;
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+
+#myProfileButton{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: #34a88b;
+    -fx-border-radius: 50px 25px;
+    -fx-border-width: 1pt 1pt 1pt 1pt;
+    -fx-text-fill: #34a88b;
+    -fx-font-family: Arial;
+    -fx-font-size: 16pt;
+}
+#myProfileButton:hover{
+    -fx-background-color: rgba(255, 0, 0, 0);
+    -fx-border-color: #34a88b;
+    -fx-border-radius: 50px 25px;
+    -fx-border-width: 2pt 2pt 2pt 2pt;
+    -fx-text-fill: #34a88b;
+    -fx-font-family: Arial;
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+
+#xB{
+    -fx-background-color: rgba(255, 0, 0, 0);
+}
