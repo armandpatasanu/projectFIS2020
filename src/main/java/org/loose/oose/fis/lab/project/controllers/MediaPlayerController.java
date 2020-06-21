@@ -191,5 +191,11 @@ public class MediaPlayerController implements Initializable {
         }
     }
 
+    public static int getLiked() {
+        return liked;
+    }
 
+    public static void setLiked(int liked) {
+        MediaPlayerController.liked = liked;
+    }
 }

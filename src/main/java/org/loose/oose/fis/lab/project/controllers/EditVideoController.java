@@ -69,4 +69,31 @@ public class EditVideoController implements Initializable {
         Stage s = (Stage) videoPane.getScene().getWindow();
         s.close();
     }
+
+    public void setTitleTF(TextField title){
+        titleTF = title;
+    }
+
+    public void setCategoryCB(ChoiceBox cb){
+        categoryCB = cb;
+    }
+
+    public void setDescriptionTA(TextArea text){
+        descriptionTA = text;
+    }
+
+    public void setThumbnailTF(TextField tn){
+        thumbnailTF = tn;
+    }
+
+    public void handleSaveForTest(){
+        active_video.setCategory(categoryCB.getValue());
+        active_video.setDescription(descriptionTA.getText());
+        active_video.setThumbnail_path(thumbnailTF.getText());
+        active_video.setTitle(titleTF.getText());
+    }
+
+    public TextField getTitleTF(){
+        return titleTF;
+    }
 }
