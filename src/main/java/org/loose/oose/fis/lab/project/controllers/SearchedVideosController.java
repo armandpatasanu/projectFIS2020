@@ -56,12 +56,16 @@ public class SearchedVideosController implements Initializable {
         profileStage.show();
     }
 
-    public ListView<HBox> getList() {
-        return list;
-    }
+    public ListView<HBox> getList() { return list; }
+
+    public void setList(ListView<HBox> list) { this.list = list; }
 
     public void setMessage(String message){
         l.setText(message);
+    }
+
+    public String getMessage(){
+        return l.getText();
     }
 
     public void xPressedHandler(){

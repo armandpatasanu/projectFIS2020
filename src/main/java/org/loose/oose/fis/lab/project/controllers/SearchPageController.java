@@ -17,7 +17,7 @@ public class SearchPageController {
     @FXML
     private Button myProfileButton;
 
-    public static String current_category;
+    public static String current_category = new String();
 
     public void openProfileHandler(ActionEvent event) throws IOException {
         Stage prevStage = (Stage) myProfileButton.getScene().getWindow();
@@ -53,6 +53,7 @@ public class SearchPageController {
         buttonClicked("Sports");
     }
 
+
     public void buttonClicked(String category) throws IOException{
         current_category = category;
         Stage prevStage = (Stage) myProfileButton.getScene().getWindow();
@@ -60,6 +61,10 @@ public class SearchPageController {
         Stage stage=new Stage();
         Stage profileStage = createSearchedVideosStage(stage);
         profileStage.show();
+    }
+
+    public void buttonClickedForTest(String category){
+        current_category = category;
     }
 
     public void xPressedHandler(){
